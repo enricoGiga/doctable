@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "doctable"
+version = "0.1.0"
+description = ""
+authors = ["enricoGiga <enrico.gigante@gmail.co,>"]
+readme = "README.md"
+
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+paddlepaddle = "^2.5.2"
+shapely = "^2.0.1"
+setuptools = "*"
+pyclipper = "^1.3.0"
+torch = {url = "https://download.pytorch.org/whl/cu121/torch-2.1.1%2Bcu121-cp39-cp39-win_amd64.whl"}
+torchvision = {url = "https://download.pytorch.org/whl/cu121/torchvision-0.16.1%2Bcu121-cp39-cp39-win_amd64.whl"}
+torchaudio = {url = "https://download.pytorch.org/whl/cu121/torchaudio-2.1.1%2Bcu121-cp39-cp39-win_amd64.whl"}
+opencv-contrib-python = "^4.6.0.66"
+opencv-python = "^4.6.0.66"
+opencv-python-headless = "^4.6.0.66"
+Jupyter = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.3"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
