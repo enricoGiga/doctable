@@ -1,7 +1,7 @@
 ______________________________________________________________________
 <div align="center">
 
-# 🤖 AI Awesome Project Template
+# 🤖 AI Doctable
 
 <p align="center">
   <a href="https://github.com/wiktorlazarski">👋 Template author</a>
@@ -18,17 +18,13 @@ You may want to adjust badge links in a README.md file.
 
 </div>
 
-## 💎 Installation with `pip`
+## 💎 Installation with `poetry`
 
 Installation is as simple as running:
 
 ```bash
-pip install git+https://github.com/wiktorlazarski/ai-awesome-project-template.git
+poetry install
 ```
-
-## ⚙️ Setup
-
-**Before setting up a project,** make sure that the `setup.py` script has all setup parameters adjusted and change an `ai_awesome` directory name to your project name. Also, if you want to use conda environment, you may want to change its name in a `conda_env.yml` file. Then, follow the instruction:
 
 ```bash
 # Clone repo
@@ -37,38 +33,39 @@ git clone https://github.com/wiktorlazarski/ai-awesome-project-template.git
 # Go to repo directory
 cd ai-awesome-project-template
 
-# (Optional) Create virtual environment
-python -m venv venv
-source ./venv/bin/activate
+# Download poetry if you don't have it already
+see: https://python-poetry.org/docs/#installation
 
-# Install project in editable mode
-pip install -e .[dev]
+# Install project dependencies
+poetry install
 
-# (Optional but recommended) Install pre-commit hooks to preserve code format consistency
-pre-commit install
 ```
 
-## 🐍 Setup with Anaconda or Miniconda
+## Download the required models
+In the current section is explained how and where download all the required models
+### Download the Paddle models:
+* navigate inside `data/models`
+* `wget http://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_infer.tar && tar xf en_PP-OCRv3_det_infer.tar`
+* `wget http://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_rec_infer.tar && tar xf en_PP-OCRv3_rec_infer.tar`
+* `wget https://paddleocr.bj.bcebos.com/ppstructure/models/slanet/en_ppstructure_mobile_v2.0_SLANet_infer.tar && tar xf en_ppstructure_mobile_v2.0_SLANet_infer.tar` 
+### Layout Parser
+* Download the configuration file (**_TableBank faster_rcnn_R_50_FPN_3x_**) from [here](https://layout-parser.readthedocs.io/en/latest/notes/modelzoo.html) and save it into `data/config`, name the config file as `config_table.yaml`
+* Navigate into the `config_table.yaml` at the WEIGHTS field (line **267**), copy the link and download the model from it, then save the model into `data/models/` and update the **WEIGHTS** with the new path
+## Usage
+Define the **PROJECT_DIR** virtual environment, it is the root of your project
+### Usage: Layout-parser with Detectron:
+* Download the configuration file from [here](https://layout-parser.readthedocs.io/en/latest/notes/modelzoo.html): chose: TableBank dataset faster_rcnn_R_50_FPN_3x)
+* To avoid downloading the weights from url (download it manually, save it inside the [models](data%2Fmodels) path and change the WEIGHTS inside the configuration file)
 
-**Before setting up a project,** make sure that the `setup.py` script has all setup parameters adjusted and change an `ai_awesome` directory name to your project name. Additionally, you may want to change a default (_ai_awesome_env_) conda environment name in a `conda_env.yml` file. Then, follow the instruction:
+### Usage: How to test table detection:
+* See [detection_with_layout_parser.ipynb](notebooks%2Fdetection_with_layout_parser.ipynb)
 
-```bash
-# Clone repo
-git clone https://github.com/wiktorlazarski/ai-awesome-project-template.git
+### Usage: How to test table recognition:
+* Test the results of the recognition model on your cropped table image:
+* See [recognition_with_paddle.ipynb](notebooks%2Frecognition_with_paddle.ipynb)
 
-# Go to repo directory
-cd ai-awesome-project-template
+### How to test table detection + table recognition:
+* You can test the table detection and recognition  either on image or pdf, call the method: `ailab_table_extraction(path: str)`
+* See [detection_and_recognition.ipynb](notebooks%2Fdetection_and_recognition.ipynb)
 
-# Create and activate conda environment
-conda env create -f ./conda_env.yml
-conda activate ai_awesome_env
 
-# (Optional but recommended) Install pre-commit hooks to preserve code format consistency
-pre-commit install
-```
-
-<div align="center">
-
-### 🤗 Happy coding !
-
-</div>

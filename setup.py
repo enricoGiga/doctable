@@ -18,7 +18,7 @@ install_requires = [line.strip() for line in open("requirements.txt").readlines(
 with open("README.md", "r", encoding="UTF-8") as fh:
     long_description = fh.read()
 
-__version__ = runpy.run_path("ai_awesome/_version.py")["__version__"]
+__version__ = runpy.run_path("doctable/_version.py")["__version__"]
 
 # Setup package
 setuptools.setup(
