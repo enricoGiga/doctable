@@ -1,21 +1,23 @@
 ______________________________________________________________________
 <div style="text-align:center">
 
-# 🤖  Doctable
-
-
-
-
+<div>
+    🤖  Doctable
+</div>
 
 ______________________________________________________________________
 
-
-
 </div>
 
-## 💎 Installation with `poetry`
+This repository contains the code to extract tables from pdf and images. 
+The table extraction is done in two steps:
+1. Table detection: the table is detected and cropped from the original image
+    - The table detection is done using the YOLOv8s Table Detection model.
+    - You can find reference to the model [here](https://huggingface.co/foduucom/table-detection-and-extraction)
+2. Table recognition: the table is recognized and the text is extracted
+   - I used the PaddleOCR models to recognize the structure and the text of the table.
 
-Installation is as simple as running:
+## 💎 Installation with `poetry`
 
 ```bash
 poetry install
@@ -46,19 +48,16 @@ In the current section is explained how and where download all the required mode
 
 ## Usage
 Define the **PROJECT_DIR** virtual environment, it is the root of your project
-### Usage: Layout-parser with Detectron:
-* Download the configuration file from [here](https://layout-parser.readthedocs.io/en/latest/notes/modelzoo.html): chose: TableBank dataset faster_rcnn_R_50_FPN_3x)
-* To avoid downloading the weights from url (download it manually, save it inside the [models](data%2Fmodels) path and change the WEIGHTS inside the configuration file)
 
 ### Usage: How to test table detection:
-* See [detection_with_layout_parser.ipynb](notebooks%2Fdetection_with_layout_parser.ipynb)
+* See [detection.ipynb](notebooks%2Fdetection.ipynb)
 
 ### Usage: How to test table recognition:
 * Test the results of the recognition model on your cropped table image:
-* See [recognition_with_paddle.ipynb](notebooks%2Frecognition_with_paddle.ipynb)
+* See [recognition.ipynb](notebooks%2Frecognition.ipynb)
 
 ### How to test table detection + table recognition:
 * You can test the table detection and recognition  either on image or pdf, call the method: `ailab_table_extraction(path: str)`
-* See [detection_and_recognition.ipynb](notebooks%2Fdetection_and_recognition.ipynb)
+* See [detection+recognition.ipynb](notebooks%2Fdetection%2Brecognition.ipynb)
 
 
