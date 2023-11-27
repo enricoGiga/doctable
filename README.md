@@ -48,9 +48,7 @@ In the current section is explained how and where download all the required mode
 * `wget http://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_infer.tar && tar xf en_PP-OCRv3_det_infer.tar`
 * `wget http://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_rec_infer.tar && tar xf en_PP-OCRv3_rec_infer.tar`
 * `wget https://paddleocr.bj.bcebos.com/ppstructure/models/slanet/en_ppstructure_mobile_v2.0_SLANet_infer.tar && tar xf en_ppstructure_mobile_v2.0_SLANet_infer.tar` 
-### Layout Parser
-* Download the configuration file (**_TableBank faster_rcnn_R_50_FPN_3x_**) from [here](https://layout-parser.readthedocs.io/en/latest/notes/modelzoo.html) and save it into `data/config`, name the config file as `config_table.yaml`
-* Navigate into the `config_table.yaml` at the WEIGHTS field (line **267**), copy the link and download the model from it, then save the model into `data/models/` and update the **WEIGHTS** with the new path
+
 ## Usage
 Define the **PROJECT_DIR** virtual environment, it is the root of your project
 ### Usage: Layout-parser with Detectron:

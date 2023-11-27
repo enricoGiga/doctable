@@ -1,10 +1,9 @@
-import os
 from typing import Union
 
 import numpy as np
 
 from doctable.table_recognition.PPStructure import PPStructure
-from doctable.utilities import cv2_read
+from doctable.data_utility.utilities import cv2_read
 
 
 class TableRecognizer:
