@@ -1,9 +1,9 @@
 ______________________________________________________________________
 <div style="text-align:center">
 
-<div>
-    🤖  Doctable
-</div>
+
+#   DOCTABLE
+## A simple tool to extract tables from pdf and images
 
 ______________________________________________________________________
 
@@ -53,11 +53,10 @@ Define the **PROJECT_DIR** virtual environment, it is the root of your project
 * See [detection.ipynb](notebooks%2Fdetection.ipynb)
 
 ### Usage: How to test table recognition:
-* Test the results of the recognition model on your cropped table image:
 * See [recognition.ipynb](notebooks%2Frecognition.ipynb)
 
 ### How to test table detection + table recognition:
-* You can test the table detection and recognition  either on image or pdf, call the method: `ailab_table_extraction(path: str)`
-* See [detection+recognition.ipynb](notebooks%2Fdetection%2Brecognition.ipynb)
+* See how to try the whole pipeline on a single image or pdf [here](notebooks%2Fdetection%2Brecognition.ipynb)
+
 
 
