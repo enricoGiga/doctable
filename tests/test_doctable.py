@@ -7,7 +7,7 @@ import numpy as np
 from doctable.data_utility.datatype import Table
 from doctable.table_detection.detection import TableDetector
 from doctable.table_recognition.recognition import TableRecognizer
-from main import table_extraction
+from doctable import table_extraction
 
 
 class DoctableTestCase(unittest.TestCase):
