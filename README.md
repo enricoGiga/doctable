@@ -86,17 +86,17 @@ The [detection%2Brecognition.ipynb](notebooks%2Fdetection%2Brecognition.ipynb) n
 
 ### How to test table detection + table recognition:
 * See how to try the whole pipeline on a single image or pdf [here](notebooks%2Fdetection%2Brecognition.ipynb)
-## Demo
-You can test your own images or PDFs by running a demo with Streamlit. This demo provides a user-friendly interface for testing the table detection and recognition features.
 
-To run the Streamlit demo, use the following command:
+## Contributing
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-```bash
-streamlit run .\doctable\streamlit_demo\app.py
-```
-[![Demo Video](http://img.youtube.com/vi/hb2zUQJB1d4/0.jpg)](https://www.youtube.com/watch?v=hb2zUQJB1d4)
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-
+Please make sure to update tests as appropriate.
 
 ## License
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
