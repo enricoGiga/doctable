@@ -17,6 +17,12 @@ The table extraction is done in two steps:
 2. Table recognition: the table is recognized and the text is extracted
    - I used the PaddleOCR models to recognize the structure and the text of the table.
 
+# DEMO
+You can test your own images or pdfs by simply running a demo with streamlit:
+* To run streamlit lunch:`streamlit run .\doctable\streamlit_demo\app.py`
+[![Demo Video](http://img.youtube.com/vi/XT3klGwHV0E/0.jpg)](https://www.youtube.com/watch?v=XT3klGwHV0E)
+
+
 ## 💎 Installation with `poetry`
 
 ```bash
