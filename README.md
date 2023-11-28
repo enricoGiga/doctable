@@ -95,3 +95,11 @@ To run the Streamlit demo, use the following command:
 streamlit run .\doctable\streamlit_demo\app.py
 ```
 [![Demo Video](http://img.youtube.com/vi/hb2zUQJB1d4/0.jpg)](https://www.youtube.com/watch?v=hb2zUQJB1d4)
+
+
+
+## License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
+
+## Contact
+For any questions or support, please contact us at [enrico.gigante@gmail.com](mailto:enrico.gigante@gmail.com).
