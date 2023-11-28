@@ -57,6 +57,7 @@ Define the **PROJECT_DIR** virtual environment, it is the root of your project
 
 ### How to test table detection + table recognition:
 * See how to try the whole pipeline on a single image or pdf [here](notebooks%2Fdetection%2Brecognition.ipynb)
-
-
-
+# DEMO
+You can test your own images or pdfs by simply running a demo with streamlit:
+* To run streamlit lunch:`streamlit run .\doctable\streamlit_demo\app.py`
+[![Demo Video](http://img.youtube.com/vi/hb2zUQJB1d4/0.jpg)](https://www.youtube.com/watch?v=hb2zUQJB1d4)
