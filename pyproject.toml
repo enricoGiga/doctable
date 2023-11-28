@@ -31,7 +31,10 @@ toml = "^0.10.2"
 
 
 [tool.poetry.dev-dependencies]
+streamlit = "^1.12.0"
+altair = "^4.2.2"
 pytest = "^7.4.3"
+html5lib = "^1.1"
 
 
 

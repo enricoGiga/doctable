@@ -10,11 +10,30 @@ from doctable.table_recognition.recognition import TableRecognizer
 
 
 class Doctable:
+    """
+    The Doctable class is responsible for processing documents and extracting tables from them.
+    It uses the TableDetector and TableRecognizer classes to detect and recognize tables respectively.
+    """
+
     def __init__(self):
+        """
+        Initializes the Doctable class with a TableDetector and TableRecognizer.
+        """
         self.detector = TableDetector()
         self.recognizer = TableRecognizer()
 
     def process_page(self, page: Union[fitz.Page, Image.Image], page_number: int) -> Page:
+        """
+        Processes a single page from a document. If the page is a fitz.Page, it is converted to an Image.
+        Tables are detected and recognized in the page.
+
+        Args:
+            page (Union[fitz.Page, Image.Image]): The page to process.
+            page_number (int): The number of the page in the document.
+
+        Returns:
+            Page: The processed page with recognized tables.
+        """
         new_page = Page(page_number=page_number)
 
         if isinstance(page, fitz.Page):
@@ -30,6 +49,19 @@ class Doctable:
         return new_page
 
     def table_extraction(self, path: str) -> List[Page]:
+        """
+        Extracts tables from a document. The document can be a PDF or an image.
+
+        Args:
+            path (str): The path to the document.
+
+        Returns:
+            List[Page]: A list of processed pages with recognized tables.
+
+        Raises:
+            FileNotFoundError, IsADirectoryError, UnidentifiedImageError: If the file does not exist or is not a valid PDF or image.
+            Exception: For any other unexpected errors.
+        """
         pages: List[Page] = []
 
         try:
