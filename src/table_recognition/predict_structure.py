@@ -2,8 +2,8 @@ import time
 
 import numpy as np
 
-from doctable.table_recognition import utility
-from doctable.table_recognition.utility import create_operators, build_post_process, \
+from src.table_recognition import utility
+from src.table_recognition.utility import create_operators, build_post_process, \
     transform
 
 

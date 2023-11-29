@@ -11,8 +11,10 @@ from sahi.utils.cv import read_image
 from ultralytics.yolo.engine.results import Results
 from ultralyticsplus import YOLO
 
-from doctable.data_utility.datatype import Table
-from doctable.table_detection.detect_utils import get_object_predictions, \
+
+from src.data_utility.datatype import Table
+from src.data_utility.utilities import get_project_directory_path
+from src.table_detection.detect_utils import get_object_predictions, \
     is_pil_image, is_str_image, get_pil_image
 
 
@@ -106,7 +108,6 @@ class TableDetector:
                     img = cv2.rectangle(img, d_table.pt1, d_table.pt2, (255, 0, 0),
                                         thickness=2)
                 plt.imshow(img)
-                # plt.savefig(f"{os.environ['PROJECT_DIR']}/data/images/mygraph.png")
         else:
 
             img = get_pil_image(img_path)
@@ -119,10 +120,9 @@ class TableDetector:
                                     (255, 0, 0), thickness=2)
             plt.imshow(img)
             plt.show()
-            # plt.savefig(f"{os.environ['PROJECT_DIR']}/data/images/mygraph.png")
 
 
 if __name__ == '__main__':
-    pdf_path = f"{os.environ['PROJECT_DIR']}/data/images/detection_img1.jpg"
+    pdf_path = f"{get_project_directory_path()}/data/images/detection_img1.jpg"
     table_detector = TableDetector()
     table_detector.show_detection_results(pdf_path)

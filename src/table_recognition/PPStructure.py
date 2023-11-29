@@ -1,6 +1,6 @@
-from doctable.table_recognition.init_args import init_args
-from doctable.table_recognition.structure_system import StructureSystem
-from doctable.table_recognition.utility import check_img
+from src.table_recognition.init_args import init_args
+from src.table_recognition.structure_system import StructureSystem
+from src.table_recognition.utility import check_img
 
 
 class PPStructure(StructureSystem):

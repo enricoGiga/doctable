@@ -1,26 +1,28 @@
+import os
+import tempfile
+
 import pandas as pd
 import streamlit as st
-import tempfile
-from doctable.doctable import Doctable
-import os
 
-# Set the environment variable
-os.environ['PROJECT_DIR'] = 'C:/Users/enric/PycharmProjects/doctable'
+from src.data_utility.utilities import get_parent_directory_path
+from src.doctable import Doctable
 
-# Now you can access it anywhere in your code
-project_dir = os.getenv('PROJECT_DIR')
 # Create an instance of Doctable
-doctable = Doctable()
+st.write(get_parent_directory_path(2))
 
+doctable = Doctable()
 # Create a sidebar for file upload
 st.sidebar.title("Upload PDF or Image")
-uploaded_file = st.sidebar.file_uploader("Choose a PDF or image file", type=["pdf", "png", "jpg", "jpeg"])
+uploaded_file = st.sidebar.file_uploader("Choose a PDF or image file",
+                                         type=["pdf", "png", "jpg", "jpeg"])
 
 # Add a button for processing the file
 if st.button('Process File'):
     if uploaded_file is not None:
         # Save the uploaded file to a temporary location
-        with tempfile.NamedTemporaryFile(delete=False, suffix="."+uploaded_file.type.split('/')[1]) as tmp:
+        with tempfile.NamedTemporaryFile(delete=False,
+                                         suffix="." + uploaded_file.type.split('/')[
+                                             1]) as tmp:
             tmp.write(uploaded_file.getvalue())
             tmp_path = tmp.name
         # Process the uploaded file with Doctable

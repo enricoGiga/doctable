@@ -2,10 +2,10 @@ import copy
 import numpy as np
 import time
 
-from doctable.table_recognition import predict_det, predict_rec, utility
-from doctable.table_recognition.matcher import TableMatch
-from doctable.table_recognition.predict_structure import TableStructure
-from doctable.table_recognition.predict_system import sorted_boxes
+from src.table_recognition import predict_det, predict_rec, utility
+from src.table_recognition.matcher import TableMatch
+from src.table_recognition.predict_structure import TableStructure
+from src.table_recognition.predict_system import sorted_boxes
 
 
 def expand(pix, det_box, shape):

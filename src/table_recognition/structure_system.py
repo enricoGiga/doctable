@@ -1,5 +1,5 @@
-from doctable.table_recognition.predict_system import TextSystem
-from doctable.table_recognition.predict_table import TableSystem
+from src.table_recognition.predict_system import TextSystem
+from src.table_recognition.predict_table import TableSystem
 
 
 class StructureSystem(object):

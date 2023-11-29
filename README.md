@@ -54,21 +54,23 @@ poetry install
 Here is a simple example of how to use Doctable to extract tables from an image:
 
 ```python
-from doctable.doctable import Doctable
+from src.doctable import Doctable
 
 # Initialize Doctable
 doctable = Doctable()
 
-# Path to your image
+# Path to your image (can be jpg, png, pdf, etc.)
 img_path = "/path/to/your/image.jpg"
 
-# Extract tables from the image
+# Extract pages, each page contains a list of tables, 
+# if the path is an image there will be only one page, 
+# otherwise there will be one page for each page in the pdf.
 pages = doctable.table_extraction(img_path)
 
 # Print the recognition results for each table in each page
 for page in pages:
-    for table in page.tables:
-        print(table.recognition_results["text"])
+   for table in page.tables:
+      print(table.recognition_results["text"])
 ```
 
 ## Usage
@@ -83,9 +85,6 @@ The [recognition.ipynb](notebooks%2Frecognition.ipynb) notebook demonstrates how
 ### How to test table detection + table recognition:
 The [detection%2Brecognition.ipynb](notebooks%2Fdetection%2Brecognition.ipynb) notebook demonstrates how to use both the table detection and recognition features together. It includes examples of detecting tables in an image or PDF, and then recognizing the structure and text of the detected tables.
 
-
-### How to test table detection + table recognition:
-* See how to try the whole pipeline on a single image or pdf [here](notebooks%2Fdetection%2Brecognition.ipynb)
 
 ## Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.

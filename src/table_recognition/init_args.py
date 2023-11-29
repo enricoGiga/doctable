@@ -1,6 +1,8 @@
 import argparse
 import os
 
+from src.data_utility.utilities import get_project_directory_path
+
 
 def str2bool(v):
     return v.lower() in ("true", "yes", "t", "y", "1")
@@ -8,7 +10,7 @@ def str2bool(v):
 
 def init_args():
     parser = argparse.ArgumentParser()
-
+    project_root = get_project_directory_path()
     parser.add_argument("--use_gpu", type=str2bool, default=False)
     parser.add_argument("--use_xpu", type=str2bool, default=False)
     parser.add_argument("--use_npu", type=str2bool, default=False)
@@ -53,16 +55,16 @@ def init_args():
 
     parser.add_argument(
         "--rec_char_dict_path", type=str,
-        default=f"{os.environ['PROJECT_DIR']}/configs/en_dict.txt")
+        default=f"{project_root}/configs/en_dict.txt")
     parser.add_argument("--type", type=str, default='structure')
     parser.add_argument("--layout", type=str2bool, default=False)
     parser.add_argument("--det_model_dir", type=str,
-                        default=f"{os.environ['PROJECT_DIR']}/data/models/en_PP-OCRv3_det_infer")
+                        default=f"{project_root}/data/models/en_PP-OCRv3_det_infer")
     parser.add_argument("--rec_model_dir", type=str,
-                        default=f"{os.environ['PROJECT_DIR']}/data/models/en_PP-OCRv3_rec_infer")
+                        default=f"{project_root}/data/models/en_PP-OCRv3_rec_infer")
     parser.add_argument("--table_model_dir", type=str,
-                        default=f"{os.environ['PROJECT_DIR']}/data/models/en_ppstructure_mobile_v2.0_SLANet_infer")
+                        default=f"{project_root}/data/models/en_ppstructure_mobile_v2.0_SLANet_infer")
     parser.add_argument("--table_char_dict_path", type=str,
-                        default=f"{os.environ['PROJECT_DIR']}/configs/table_structure_dict.txt")
+                        default=f"{project_root}/configs/table_structure_dict.txt")
 
     return parser

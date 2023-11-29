@@ -4,9 +4,9 @@ from typing import List, Union
 import fitz
 from PIL import Image, UnidentifiedImageError
 
-from doctable.data_utility.datatype import Page
-from doctable.table_detection.detection import TableDetector
-from doctable.table_recognition.recognition import TableRecognizer
+from src.data_utility.datatype import Page
+from src.table_detection.detection import TableDetector
+from src.table_recognition.recognition import TableRecognizer
 
 
 class Doctable:

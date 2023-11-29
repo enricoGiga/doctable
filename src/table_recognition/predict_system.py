@@ -1,8 +1,8 @@
 import copy
 import time
 
-from doctable.table_recognition.utility import get_rotate_crop_image, get_minarea_rect_crop
-from doctable.table_recognition import predict_det, predict_rec
+from src.table_recognition.utility import get_rotate_crop_image, get_minarea_rect_crop
+from src.table_recognition import predict_det, predict_rec
 
 
 class TextSystem(object):
