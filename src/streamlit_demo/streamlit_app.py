@@ -4,11 +4,7 @@ import tempfile
 import pandas as pd
 import streamlit as st
 
-from src.data_utility.utilities import get_parent_directory_path
 from src.doctable import Doctable
-
-# Create an instance of Doctable
-st.write(get_parent_directory_path(2))
 
 doctable = Doctable()
 # Create a sidebar for file upload
